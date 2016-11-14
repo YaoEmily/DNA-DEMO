@@ -14,51 +14,75 @@ public class DemoEntry implements UIEntry{
 
 	@Override
 	public void createUI(String[] args, Shell shell) {
-		// TODO Auto-generated method stub
-		//System.out.println("Hello DNA!");
 		
-		Composite composite = new Composite(shell);
-		composite.setBorder(new CBorder(1,1,1));
-		composite.setSize(600, 300);
-		//给容器设置边距
-		
-		//布局是设置在上边容器上的
+		//计算器最外层容器
+		Composite compositeOutermost = new Composite(shell);
+		compositeOutermost.setBorder(new CBorder(1,1,1));
+		compositeOutermost.setSize(500,300);
 		//创建网格布局
-		GridLayout gridLayout = new GridLayout(4);
-		//给容器设置边距
-		gridLayout.marginBottom = 8;
-		gridLayout.marginLeft = 8;
-		gridLayout.marginRight = 8;
-		gridLayout.marginTop = 8;
-		gridLayout.makeColumnsEqualWidth = true;
-		composite.setLayout(gridLayout);
-		GridData gridData_txt = new GridData(GridData.FILL_BOTH);
-		gridData_txt.horizontalSpan = 4;
+		GridLayout gridLayoutOutermost = new GridLayout();
+		gridLayoutOutermost.marginBottom = 8;
+		gridLayoutOutermost.marginLeft = 8;
+		gridLayoutOutermost.marginRight = 8;
+		gridLayoutOutermost.marginTop = 8;
+		compositeOutermost.setLayout(gridLayoutOutermost);
 		
-//		Label label = new Label(shell);
-//		label.setText("Hello Label");
-//		label.setSize(100, 20);
 		
-		Text text = new Text(composite);
-		text.setLayoutData(gridData_txt);
+		//计算器内层上部容器
+		Composite compositeInsideUp = new Composite(compositeOutermost);
+		compositeInsideUp.setBorder(new CBorder(1,1,1));
+		compositeInsideUp.setSize(500, 100);
+		//左右填充
+		GridData gridDataInsideUp = new GridData(GridData.FILL_HORIZONTAL);
+		compositeInsideUp.setLayoutData(gridDataInsideUp);
 		
-		Button button = new Button(composite);
-		button.setText("Hello Button!");
-		button.setSize(200,50);
-		for(int i = 0; i < 10; i++)
+		//文字框
+		Text text = new Text(compositeInsideUp);
+		text.setSize(500,75);
+		text.setText("0");
+		text.setEditable(false);
+		GridData gridDataText = new GridData(GridData.FILL_BOTH);
+		text.setLayoutData(gridDataText);
+		
+		
+		//计算器内层下部容器
+		Composite compositeInsideDown = new Composite(compositeOutermost);
+		compositeInsideDown.setBorder(new CBorder(1,1,1));
+		compositeInsideDown.setSize(500, 100);
+		//左右填充
+		GridData gridDataInsideDown = new GridData(GridData.FILL_BOTH);
+		compositeInsideDown.setLayoutData(gridDataInsideDown);
+		//创建内部布局
+		GridLayout gridLayoutInsideDown = new GridLayout(10);
+		gridLayoutInsideDown.makeColumnsEqualWidth = true;
+		//gridLayoutInsideDown.
+		compositeInsideDown.setLayout(gridLayoutInsideDown);
+		
+		//内部下层radio容器
+		Composite compositeRadio = new Composite(compositeInsideDown);
+		compositeRadio.setBorder(new CBorder(1,1,1));
+		compositeRadio.setSize(500, 1);
+		GridData gridDataRadio = new GridData(GridData.FILL_HORIZONTAL);
+		gridDataRadio.horizontalSpan = 5;
+		compositeRadio.setLayoutData(gridDataRadio);
+		
+		//radio容器中的三个radio
+		Button radio;
+		for(int i = 0; i < 3; i++)
 		{
-			button = new Button(composite);
-			button.setText("Hello Button" + Integer.toString(i) + "!");
+			radio = new Button(compositeRadio, JWT.RADIO);
+			radio.setText("radio");
 		}
-		//控件可以改变布局数据来改变自身大小
-		button.setText("Hello ButtonAAAAAAAAAAAAA!");
-		GridData gridData = new GridData();
-		gridData.horizontalSpan = 2;
-		gridData.grabExcessHorizontalSpace = true;
-		button.setLayoutData(gridData);
 		
-//		Text text = new Text(shell);
-//		text.setSize(400,100);
+		//55个按钮
+		Button button;
+		GridData gridDataButton = new GridData(GridData.FILL_BOTH);
+		for(int i = 0; i < 55; i++)
+		{
+			button = new Button(compositeInsideDown);
+			button.setText("CE");
+			button.setLayoutData(gridDataButton);
+		}
 	}
 
 }
