@@ -55,16 +55,17 @@ public class DemoEntry implements UIEntry{
 		//创建内部布局
 		GridLayout gridLayoutInsideDown = new GridLayout(10);
 		gridLayoutInsideDown.makeColumnsEqualWidth = true;
-		//gridLayoutInsideDown.
 		compositeInsideDown.setLayout(gridLayoutInsideDown);
 		
 		//内部下层radio容器
 		Composite compositeRadio = new Composite(compositeInsideDown);
 		compositeRadio.setBorder(new CBorder(1,1,1));
-		compositeRadio.setSize(500, 1);
-		GridData gridDataRadio = new GridData(GridData.FILL_HORIZONTAL);
-		gridDataRadio.horizontalSpan = 5;
-		compositeRadio.setLayoutData(gridDataRadio);
+		GridData gridDataRadioCom = new GridData(GridData.FILL_HORIZONTAL);
+		gridDataRadioCom.horizontalSpan = 5;
+		compositeRadio.setLayoutData(gridDataRadioCom);
+		GridLayout gridLayoutRadio = new GridLayout(3);
+		gridLayoutRadio.makeColumnsEqualWidth = true;
+		compositeRadio.setLayout(gridLayoutRadio);
 		
 		//radio容器中的三个radio
 		Button radio;
@@ -72,6 +73,7 @@ public class DemoEntry implements UIEntry{
 		{
 			radio = new Button(compositeRadio, JWT.RADIO);
 			radio.setText("radio");
+			radio.setLayoutData(new GridData(GridData.FILL_BOTH));
 		}
 		
 		//55个按钮
@@ -82,6 +84,7 @@ public class DemoEntry implements UIEntry{
 			button = new Button(compositeInsideDown);
 			button.setText("CE");
 			button.setLayoutData(gridDataButton);
+			
 		}
 	}
 
