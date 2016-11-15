@@ -60,7 +60,7 @@ public class DemoEntry implements UIEntry{
 		//ÄÚ²¿ÏÂ²ãradioÈÝÆ÷
 		Composite compositeRadio = new Composite(compositeInsideDown);
 		compositeRadio.setBorder(new CBorder(1,1,1));
-		GridData gridDataRadioCom = new GridData(GridData.FILL_HORIZONTAL);
+		GridData gridDataRadioCom = new GridData(GridData.FILL_BOTH);
 		gridDataRadioCom.horizontalSpan = 5;
 		compositeRadio.setLayoutData(gridDataRadioCom);
 		GridLayout gridLayoutRadio = new GridLayout(3);
