@@ -29,7 +29,8 @@
 		
 		<pages>
 			<!--page space="mydemo" name="testtemplate" class="com.jiuqi.dna.ui.template.launch.TemplatePage" /-->
-			<page space="demo" name="main" class="com.jiuqi.xuheyao.dna.demo.ui.MainPage" />
+			<page space="demo" name="mainPage" class="com.jiuqi.xuheyao.dna.demo.ui.MainPage" />
+			<page space="demo" name="editDeptPage" class="com.jiuqi.xuheyao.dna.demo.ui.EditDeptPage" />
 		</pages>
 		
 		<ui-stylesheets>

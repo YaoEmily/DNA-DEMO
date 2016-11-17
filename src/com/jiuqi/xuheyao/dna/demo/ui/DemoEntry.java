@@ -7,7 +7,7 @@ public class DemoEntry implements UIEntry{
 
 	@Override
 	public void createUI(String[] args, Shell shell) {
-		shell.showPage("main");
+		shell.showPage("mainPage");
 		
 	}
 
