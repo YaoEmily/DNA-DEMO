@@ -18,6 +18,8 @@ import com.jiuqi.dna.ui.wt.layouts.GridData;
 import com.jiuqi.dna.ui.wt.layouts.GridLayout;
 import com.jiuqi.dna.ui.wt.widgets.Composite;
 import com.jiuqi.dna.ui.wt.widgets.Label;
+import com.jiuqi.dna.ui.wt.widgets.Menu;
+import com.jiuqi.dna.ui.wt.widgets.MenuItem;
 import com.jiuqi.dna.ui.wt.widgets.Page;
 import com.jiuqi.dna.ui.wt.widgets.SashForm;
 import com.jiuqi.dna.ui.wt.widgets.ToolBar;
@@ -37,22 +39,20 @@ public class MainPage extends Page {
 		ToolBar toolBar = new ToolBar(this);
 		toolBar.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		
-		ToolItem createItem = new ToolItem(toolBar);
+		ToolItem createItem = new ToolItem(toolBar,JWT.DROP_DOWN);
 		createItem.setText("新增");
 		ImageDescriptor createImage = getContext().find(ImageDescriptor.class, BapImages.ico_create);
 		createItem.setImage(createImage);
 		
-//		Menu menu = new Menu(toolBar);
-//		MenuItem editDept = new MenuItem(menu, JWT.PUSH);
-//		editDept.setText("新增部门");
-//		MenuItem editPerson = new MenuItem(menu, JWT.PUSH);
-//		editPerson.setText("新增人员");
-//		createItem.setMenu(menu);
+		Menu menu = new Menu(toolBar);
+		MenuItem editDept = new MenuItem(menu);
+		editDept.setText("新增部门");
+		MenuItem editPerson = new MenuItem(menu);
+		editPerson.setText("新增人员");
+		createItem.setMenu(menu);
 		
-		ToolItem createDeptItem = new ToolItem(toolBar);
-		createDeptItem.setText("新增部门");
 		//添加点击事件
-		createDeptItem.addActionListener(new ActionListener() {
+		editDept.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				TemplateWindow tw = TemplateLauncher.openTemplateWindow(MainPage.this, "editDeptPage", JWT.CLOSE|JWT.MODAL|JWT.RESIZE|JWT.CANCEL, JWT.CANCEL|JWT.OK, MainPage.this);
@@ -60,9 +60,6 @@ public class MainPage extends Page {
 				tw.setSize(400, 300);
 			}
 		});
-		
-		ToolItem createPersonItem = new ToolItem(toolBar);
-		createPersonItem.setText("新增人员");
 		
 		ToolItem updateItem = new ToolItem(toolBar);
 		updateItem.setText("修改");
@@ -151,6 +148,6 @@ public class MainPage extends Page {
 	public void AddTreeItem(DeptInfo deptInfo)
 	{
 		TreeItem item = new TreeItem(tree);
-		item.setText(deptInfo.deptName);
+		item.setText(deptInfo.getDeptName());
 	}
 }
