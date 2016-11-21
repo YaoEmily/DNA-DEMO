@@ -23,10 +23,8 @@ public class EditDeptPage extends Page{
 		
 		new Label(this).setText("部门名称：");
 		txtName = new Text(this);
-		
 		new Label(this).setText("创建日期：");
 		dp = new DatePicker(this);
-		
 		new Label(this).setText("上级部门：");
 		
 		//添加按钮监听器
@@ -41,6 +39,7 @@ public class EditDeptPage extends Page{
 					mainPage.AddTreeItem(deptInfo);
 				}
 			}
+			
 			
 		});
 	}
