@@ -1,7 +1,5 @@
 package com.jiuqi.xuheyao.dna.demo.ui;
 
-import java.sql.Date;
-
 import com.jiuqi.dna.bap.common.constants.BapImages;
 import com.jiuqi.dna.ui.common.constants.JWT;
 import com.jiuqi.dna.ui.components.SearchBar;
@@ -22,6 +20,7 @@ import com.jiuqi.dna.ui.wt.widgets.Menu;
 import com.jiuqi.dna.ui.wt.widgets.MenuItem;
 import com.jiuqi.dna.ui.wt.widgets.Page;
 import com.jiuqi.dna.ui.wt.widgets.SashForm;
+import com.jiuqi.dna.ui.wt.widgets.ScrolledPanel;
 import com.jiuqi.dna.ui.wt.widgets.ToolBar;
 import com.jiuqi.dna.ui.wt.widgets.ToolItem;
 import com.jiuqi.dna.ui.wt.widgets.Tree;
@@ -30,18 +29,19 @@ import com.jiuqi.dna.ui.wt.widgets.TreeItem;
 public class MainPage extends Page {
 
 	private Tree tree;
+	private ImageDescriptor createImage;
 	
 	public MainPage(Composite parent) {
 		super(parent);
 		this.setLayout(new GridLayout());
 		
 		//在页面中，创建工具栏
-		ToolBar toolBar = new ToolBar(this);
+		ToolBar toolBar = new ToolBar(this,JWT.RIGHT);
 		toolBar.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		
 		ToolItem createItem = new ToolItem(toolBar,JWT.DROP_DOWN);
 		createItem.setText("新增");
-		ImageDescriptor createImage = getContext().find(ImageDescriptor.class, BapImages.ico_create);
+		createImage = getContext().find(ImageDescriptor.class, BapImages.ico_create);
 		createItem.setImage(createImage);
 		
 		Menu menu = new Menu(toolBar);
@@ -55,10 +55,24 @@ public class MainPage extends Page {
 		editDept.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				TemplateWindow tw = TemplateLauncher.openTemplateWindow(MainPage.this, "editDeptPage", JWT.CLOSE|JWT.MODAL|JWT.RESIZE|JWT.CANCEL, JWT.CANCEL|JWT.OK, MainPage.this);
+				TemplateWindow tw = TemplateLauncher.openTemplateWindow(MainPage.this, "editDeptPage", JWT.CLOSE|JWT.MODAL|JWT.CANCEL, JWT.CANCEL|JWT.OK, MainPage.this);
 				tw.setTitle("新增部门信息");
 				tw.setSize(400, 300);
+				tw.setIcon(createImage);
 			}
+		});
+		
+		editPerson.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				TemplateWindow tw = TemplateLauncher.openTemplateWindow(MainPage.this, "editPersonPage", JWT.CLOSE|JWT.MODAL|JWT.CANCEL|JWT.MAXIMUM, JWT.NONE);
+				tw.setTitle("新增人员信息");
+				tw.setSize(500, 300);
+				tw.setIcon(createImage);
+			}
+			
 		});
 		
 		ToolItem updateItem = new ToolItem(toolBar);
@@ -119,7 +133,9 @@ public class MainPage extends Page {
 		Composite secondComposite = sashForm.getSecondComposite();
 		secondComposite.setLayout(new GridLayout());
 		//查询控件容器
-		Composite comSearch = new Composite(secondComposite);
+		//Composite comSearch = new Composite(secondComposite);
+		ScrolledPanel scrolledPanel = new ScrolledPanel(secondComposite);
+		Composite comSearch = scrolledPanel.getComposite();
 		comSearch.setLayout(new GridLayout(2));
 		new Label(comSearch).setText("员工姓名");
 		new SearchBar(comSearch, "请输入关键字"){
