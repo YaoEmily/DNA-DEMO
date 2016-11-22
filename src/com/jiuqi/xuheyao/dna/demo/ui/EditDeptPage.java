@@ -17,12 +17,13 @@ public class EditDeptPage extends Page{
 	private Text txtName;
 	private DatePicker dp;
 	
-	public EditDeptPage(Composite parent, final MainPage mainPage) {
+	public EditDeptPage(Composite parent, final DeptInfoEdit deptInfoEdit) {
 		super(parent);
 		this.setLayout(new GridLayout(2));
 		
 		new Label(this).setText("部门名称：");
 		txtName = new Text(this);
+		txtName.setText(deptInfoEdit.name);
 		new Label(this).setText("创建日期：");
 		dp = new DatePicker(this);
 		new Label(this).setText("上级部门：");
@@ -36,7 +37,7 @@ public class EditDeptPage extends Page{
 				//当打开编辑界面时，将主页面自身传递给子页面
 				if(message.buttonType == JWT.OK){
 					DeptInfo deptInfo = new DeptInfo(txtName.getText(), dp.getDate());
-					mainPage.AddTreeItem(deptInfo);
+					deptInfoEdit.mainPage.AddTreeItem(deptInfo);
 				}
 			}
 			
