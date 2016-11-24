@@ -1,8 +1,0 @@
-1479364324149	Rename type 'EditDept'
-1479433410209	Encapsulate field 'deptDate'
-1479433418372	Encapsulate field 'deptName'
-1479434100195	Encapsulate field 'personName'
-1479434108765	Encapsulate field 'personAge'
-1479434113727	Encapsulate field 'personSex'
-1479434117729	Encapsulate field 'personDate'
-1479435363228	Delete element

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<DataSources>
-	<DataSource name="yaoEmily" databaseDriver="Oracle" serverIp="localhost" port="1521" databaseName="orcl" user="yaoEmily" password="root" login-timeout-ms="10000" command-timeout-ms="0" max-connections="40" min-connections="1" idle-life-ms="10000"/>
-</DataSources>

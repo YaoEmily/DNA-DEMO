@@ -1,9 +1,0 @@
-package com.jiuqi.xuheyao.dna.demo.ui;
-
-import java.util.Date;
-
-public class PersonInfoMsg {
-	
-	public String name;
-	public int age;
-}
