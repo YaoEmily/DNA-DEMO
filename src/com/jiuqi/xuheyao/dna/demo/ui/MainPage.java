@@ -30,6 +30,8 @@ import com.jiuqi.dna.ui.wt.widgets.ToolBar;
 import com.jiuqi.dna.ui.wt.widgets.ToolItem;
 import com.jiuqi.dna.ui.wt.widgets.Tree;
 import com.jiuqi.dna.ui.wt.widgets.TreeItem;
+import com.jiuqi.xuheyao.dna.demo.ui.template.PersonInfoEditMsg;
+import com.jiuqi.xuheyao.dna.demo.ui.template.PersonInfoFinishMsg;
 
 public class MainPage extends Page {
 

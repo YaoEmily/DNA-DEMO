@@ -1,4 +1,4 @@
-package com.jiuqi.xuheyao.dna.demo.ui;
+package com.jiuqi.xuheyao.dna.demo.ui.template;
 
 
 public class PersonInfoEditMsg {

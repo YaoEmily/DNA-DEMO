@@ -40,8 +40,7 @@ public class EditDeptPage extends Page{
 					deptInfoEdit.mainPage.AddTreeItem(deptInfo);
 				}
 			}
-			
-			
+
 		});
 	}
 	

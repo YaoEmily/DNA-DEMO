@@ -8,9 +8,6 @@ import com.jiuqi.dna.ui.wt.events.ActionEvent;
 import com.jiuqi.dna.ui.wt.widgets.Composite;
 import com.jiuqi.dna.ui.wt.widgets.Form;
 import com.jiuqi.dna.ui.wt.widgets.MessageDialog;
-import com.jiuqi.xuheyao.dna.demo.ui.PersonInfoEditMsg;
-import com.jiuqi.xuheyao.dna.demo.ui.PersonInfoFinishMsg;
-import com.jiuqi.xuheyao.dna.demo.ui.PersonInfoMsg;
 
 public class EditPersonPage<TControls extends EditPersonPageControls> extends Form<EditPersonPageControls> {
 
