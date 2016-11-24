@@ -15,4 +15,8 @@ public class DeptInfo {
 		this.deptName = deptName;
 		this.deptDate = deptDate;
 	}
+	public String getDeptName() {
+		// TODO Auto-generated method stub
+		return deptName;
+	}
 }
