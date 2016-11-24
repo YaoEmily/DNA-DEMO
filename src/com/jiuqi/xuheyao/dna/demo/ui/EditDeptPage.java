@@ -11,7 +11,6 @@ import com.jiuqi.dna.ui.wt.widgets.Composite;
 import com.jiuqi.dna.ui.wt.widgets.Label;
 import com.jiuqi.dna.ui.wt.widgets.Page;
 import com.jiuqi.dna.ui.wt.widgets.Text;
-import com.jiuqi.xuheyao.dna.demo.service.task.CreateDeptSimpleTask;
 
 public class EditDeptPage extends Page{
 
@@ -35,17 +34,10 @@ public class EditDeptPage extends Page{
 			@Override
 			public void onMessage(Situation context, ButtonMessage message,
 					MessageTransmitter<ButtonMessage> transmitter) {
-				//当打开 编辑界面时，将主页面自身传递给子页面
+				//当打开编辑界面时，将主页面自身传递给子页面
 				if(message.buttonType == JWT.OK){
 					DeptInfo deptInfo = new DeptInfo(txtName.getText(), dp.getDate());
 					deptInfoEdit.mainPage.AddTreeItem(deptInfo);
-					
-					
-					//触发简单任务
-					CreateDeptSimpleTask simpleTask = new CreateDeptSimpleTask();
-					simpleTask.name = txtName.getText();
-					simpleTask.createDate = dp.getDate();
-					getContext().handle(simpleTask);
 				}
 			}
 
