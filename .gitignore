@@ -3,6 +3,7 @@
 classes
 Thumbs.db
 bin
+.metadata
 *~
 
 # Mobile Tools for Java (J2ME)
