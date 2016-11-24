@@ -1,0 +1,11 @@
+package com.jiuqi.dna.demo.ui.template;
+
+import com.jiuqi.dna.ui.wt.widgets.Form;
+import com.jiuqi.dna.ui.wt.widgets.Composite;
+
+public class EditPersonPage<TControls extends EditPersonPageControls> extends Form<EditPersonPageControls> {
+
+	public EditPersonPage(Composite parent) {
+		super(parent);
+	}
+}

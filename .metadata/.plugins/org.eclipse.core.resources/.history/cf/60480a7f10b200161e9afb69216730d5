@@ -1,0 +1,5 @@
+package com.jiuqi.xuheyao.dna.demo.service.task;
+
+public class CreateDeptSimpleTask {
+
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+	<bundle bundleID="567" localization="OSGI-INF/l10n/bundle" name="Debug" project="debug"/>
+	<bundle bundleID="568" localization="OSGI-INF/l10n/bundle" name="Ui" project="com.jiuqi.xuheyao.dna.demo.ui" provider="JIUQI"/>
+	<bundle bundleID="569" localization="OSGI-INF/l10n/bundle" name="Service" project="com.jiuqi.xuheyao.dna.demo.service" provider="JIUQI"/>
+	<bundle bundleID="570" localization="OSGI-INF/l10n/bundle" name="Storage" project="com.jiuqi.xuheyao.dna.demo.storage" provider="JIUQI"/>
+</map>

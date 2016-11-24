@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	引入基础命名空间
+	"http://www.jiuqi.com.cn/UI/Form"
+ -->
+<Form xmlns="http://www.jiuqi.com.cn/UI/Form" version="1.0">
+	<!-- 界面控件 只能为 Control Composite 名空间中元素 -->
+	<Controls layout="Grid[columns:2,marginBottom:8,marginLeft:8,marginRight:8,marginTop:8]">
+		<Label id="lbl_1" layoutData="Grid[]">姓名：</Label>
+		<Text id="txt_1" layoutData="Grid[width:128,height:21]"></Text>
+		<Label id="lbl_2" layoutData="Grid[]">年龄：</Label>
+		<Spinner id="spr_1" maximum="100" minimum="0" layoutData="Grid[width:127,height:21]"/>
+		<Label id="lbl_3" layoutData="Grid[]">性别：</Label>
+		<ComboList2 id="cbl_1" text="" layoutData="Grid[width:127,height:21]"/>
+		<Label id="lbl_4" layoutData="Grid[]">入职日期：</Label>
+		<DatePicker id="dap_1" text="" layoutData="Grid[width:127,height:21]"/>
+		<Label id="lbl_5" layoutData="Grid[]">所属部门：</Label>
+		<ComboPanel id="cop_1" text="" layoutData="Grid[width:128,height:21]">
+			<Content/>
+		</ComboPanel>
+		<Label id="lbl_6" layoutData="Grid[]">备注：</Label>
+		<Text id="txt_2" layoutData="Grid[align:fill,grab:true,vgrab:true,valign:fill]" style="MULTI WRAP VERTICAL"></Text>
+		<Composite id="cmp_1" layoutData="Grid[vspan:1,span:2,width:535,height:64]">
+			<Button x="264" y="26" width="75" height="23" id="btn_1">保存并新增</Button>
+			<Button x="362" y="26" width="75" height="23" id="btn_2">保存</Button>
+			<Button x="453" y="26" width="75" height="23" id="btn_3">取消</Button>
+		</Composite>
+	</Controls>
+	<!-- 弹出菜单（控件的右键菜单和ToolBar的下拉菜单都用到） -->
+	<Menus/>
+</Form>

@@ -1,0 +1,145 @@
+package com.jiuqi.dna.demo.ui;
+
+import java.util.Date;
+
+import com.jiuqi.dna.bap.common.constants.BapImages;
+import com.jiuqi.dna.ui.common.constants.JWT;
+import com.jiuqi.dna.ui.components.SearchBar;
+import com.jiuqi.dna.ui.custom.pageBar.Pager;
+import com.jiuqi.dna.ui.custom.pageBar.Pager.PagerType;
+import com.jiuqi.dna.ui.template.launch.TemplateLauncher;
+import com.jiuqi.dna.ui.template.launch.TemplateWindow;
+import com.jiuqi.dna.ui.wt.events.ActionEvent;
+import com.jiuqi.dna.ui.wt.events.ActionListener;
+import com.jiuqi.dna.ui.wt.graphics.ImageDescriptor;
+import com.jiuqi.dna.ui.wt.grid2.Grid2;
+import com.jiuqi.dna.ui.wt.layouts.FillLayout;
+import com.jiuqi.dna.ui.wt.layouts.GridData;
+import com.jiuqi.dna.ui.wt.layouts.GridLayout;
+import com.jiuqi.dna.ui.wt.widgets.Composite;
+import com.jiuqi.dna.ui.wt.widgets.Label;
+import com.jiuqi.dna.ui.wt.widgets.Page;
+import com.jiuqi.dna.ui.wt.widgets.SashForm;
+import com.jiuqi.dna.ui.wt.widgets.ToolBar;
+import com.jiuqi.dna.ui.wt.widgets.ToolItem;
+import com.jiuqi.dna.ui.wt.widgets.Tree;
+import com.jiuqi.dna.ui.wt.widgets.TreeItem;
+
+public class MainPage extends Page{
+
+	private Tree tree;
+	
+	public MainPage(Composite parent) {
+		super(parent);
+		// TODO Auto-generated constructor stub
+		
+//		Composite c = new Composite(this);
+//		c.setSize(300, 400);
+//		c.setBorder(new CBorder(1,1,1));
+//		//c.setLayout(new GridLayout());
+//		
+//		Button b = new Button(c);
+//		b.setSize(100, 30);
+//		b.setText("逗比吴迪");
+		
+		//默认一列
+		this.setLayout(new GridLayout());
+		ToolBar toolBar = new ToolBar(this);
+		toolBar.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+		
+//		ToolItem createItem = new ToolItem(toolBar);
+//		createItem.setText("新增");
+//		ImageDescriptor createImage = getContext().find(ImageDescriptor.class, BapImages.ico_create);
+//		createItem.setImage(createImage);
+		
+		ToolItem createDeptItem = new ToolItem(toolBar);
+		createDeptItem.setText("新增部门");
+		ImageDescriptor createDeptImage = getContext().find(ImageDescriptor.class, BapImages.ico_create);
+		createDeptItem.setImage(createDeptImage);
+		//添加事件
+		createDeptItem.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				TemplateWindow tw = TemplateLauncher.openTemplateWindow(MainPage.this, "editDeptPage", JWT.CLOSE|JWT.RESIZE|JWT.MODAL|JWT.MAXIMUM|JWT.MINIMUM, JWT.CANCEL|JWT.OK, MainPage.this);
+				tw.setTitle("新增部门信息");
+				tw.setSize(400, 300);
+			}
+		});
+		
+		
+		ToolItem createPersonItem = new ToolItem(toolBar);
+		createPersonItem.setText("新增人员");
+		createPersonItem.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				TemplateWindow tw = TemplateLauncher.openTemplateWindow(MainPage.this, "editPersonPage", JWT.CLOSE|JWT.RESIZE|JWT.MODAL|JWT.MAXIMUM|JWT.MINIMUM, JWT.NONE/*, MainPage.this*/);
+				tw.setTitle("新增人员信息");
+				tw.setSize(400, 300);
+			}
+			
+		});
+		
+		ToolItem updateItem = new ToolItem(toolBar);
+		updateItem.setText("修改");
+		ToolItem deleteItem = new ToolItem(toolBar);
+		deleteItem.setText("删除");
+		
+		SashForm sashForm = new SashForm(this);
+		//双向充满父容器
+		sashForm.setLayoutData(new GridData(GridData.FILL_BOTH));
+		sashForm.setWeights("300:-1");
+		
+		//在sashform左边的容器中放入树形控件
+		Composite firstComposite = sashForm.getFirstComposite();
+		firstComposite.setLayout(new FillLayout());
+		tree = new Tree(firstComposite);
+		TreeItem item_root = new TreeItem(tree);
+		item_root.setText("久其软件");
+		TreeItem item1 = new TreeItem(item_root);
+		item1.setText("北京久其");
+		
+		Composite secondComposite = sashForm.getSecondComposite();
+		secondComposite.setLayout(new GridLayout());
+		//查询控件容器
+		Composite com_search = new Composite(secondComposite);
+		//设置为两列
+		com_search.setLayout(new GridLayout(2));
+		
+		new Label(com_search).setText("员工姓名：");
+		
+		new SearchBar(com_search, "请输入关键字") {
+			
+			@Override
+			protected void searchTextChanged(String arg0) {
+				// TODO Auto-generated method stub
+				//searchBar处理逻辑
+				
+			}
+		};
+		
+		
+		//网格控件容器
+		Composite com_grid = new Composite(secondComposite);
+		com_grid.setLayoutData(new GridData(GridData.FILL_BOTH));
+		com_grid.setLayout(new FillLayout());
+		Grid2 grid2 = new Grid2(com_grid);
+		
+		
+		//分页控件容器
+		Composite com_page = new Composite(secondComposite);
+		com_page.setLayout(new FillLayout());
+		new Pager(com_page, PagerType.DEFAULT);
+	}
+	
+	
+	public void AddTreeItem(DeptInfo deptInfo)
+	{
+		TreeItem item = new TreeItem(tree);
+		item.setText(deptInfo.name);
+		item.setData(deptInfo.createDate);
+	}
+}

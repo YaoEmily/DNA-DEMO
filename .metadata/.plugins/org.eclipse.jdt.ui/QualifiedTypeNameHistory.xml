@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.jiuqi.dna.ui.components.SearchBar"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.ui.wt.UIEntry"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.ui.wt.widgets.Button"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.ui.wt.widgets.Composite"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.ui.wt.widgets.TreeItem"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.ui.wt.layouts.FillLayout"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.ui.custom.pageBar.Pager.PagerType"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.ui.custom.pageBar.Pager"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.ui.wt.layouts.GridData"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.bap.common.constants.BapImages"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.ui.wt.graphics.ImageDescriptor"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.ui.wt.layouts.GridLayout"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.ui.common.constants.JWT"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.ui.wt.events.ActionListener"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.ui.template.launch.TemplateWindow"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.ui.custom.combo.DatePicker"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.bap.common.util.PageWindow.ButtonMessage"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="com.jiuqi.xuheyao.dna.demo.ui.DeptInfo"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.ui.wt.widgets.Page"/>
+<fullyQualifiedTypeName name="java.awt.GridLayout"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.ui.wt.widgets.Label"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.ui.wt.widgets.Text"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.ui.wt.widgets.Menu"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.ui.wt.widgets.MenuItem"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.ui.template.launch.TemplateLauncher"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.ui.wt.widgets.MessageDialog"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.ui.template.launch.TemplateWindow.CloseMessage"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.ui.wt.widgets.ScrolledPanel"/>
+<fullyQualifiedTypeName name="com.jiuqi.xuheyao.dna.demo.ui.PersonInfoMsg"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.core.situation.MessageListener"/>
+<fullyQualifiedTypeName name="com.jiuqi.xuheyao.dna.demo.ui.MainPage"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.core.invoke.SimpleTask"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.core.service.Service.SimpleTaskMethodHandler"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.core.service.Publish"/>
+<fullyQualifiedTypeName name="com.jiuqi.dna.demo.service.task.CreateDeptSimpleTask"/>
+<fullyQualifiedTypeName name="com.jiuqi.xuheyao.dna.demo.service.task.CreateDeptSimpleTask"/>
+</qualifiedTypeNameHistroy>
