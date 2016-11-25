@@ -16,6 +16,7 @@
 		<tables>
 			<!--table space="dna/core" class="com.jiuqi.dna.core.impl.TD_BundleBin" /-->
 			<table space="demo" class="com.jiuqi.xuheyao.dna.demo.storage.TB_DemoDeptInfo"/>
+			<table space="demo" class="com.jiuqi.xuheyao.dna.demo.storage.TB_DemoPersonInfo"/>
 		</tables>
 		<ui-entrys>
 			<!--uientry class="com.jiuqi.dna.bap.workflowmanager.define.ui.DemoApplicationUIEntry" name="workflowdefine">
